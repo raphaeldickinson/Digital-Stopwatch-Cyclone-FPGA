@@ -1,0 +1,1017 @@
+|stopwatch
+clk => clk.IN2
+resetn => resetn.IN2
+S1 => sw[1].IN1
+S2 => sw[2].IN1
+tenHex[0] << datapath:dpsw.port4
+tenHex[1] << datapath:dpsw.port4
+tenHex[2] << datapath:dpsw.port4
+tenHex[3] << datapath:dpsw.port4
+tenHex[4] << datapath:dpsw.port4
+tenHex[5] << datapath:dpsw.port4
+tenHex[6] << datapath:dpsw.port4
+unitHex[0] << datapath:dpsw.port5
+unitHex[1] << datapath:dpsw.port5
+unitHex[2] << datapath:dpsw.port5
+unitHex[3] << datapath:dpsw.port5
+unitHex[4] << datapath:dpsw.port5
+unitHex[5] << datapath:dpsw.port5
+unitHex[6] << datapath:dpsw.port5
+tenthHex[0] << datapath:dpsw.port6
+tenthHex[1] << datapath:dpsw.port6
+tenthHex[2] << datapath:dpsw.port6
+tenthHex[3] << datapath:dpsw.port6
+tenthHex[4] << datapath:dpsw.port6
+tenthHex[5] << datapath:dpsw.port6
+tenthHex[6] << datapath:dpsw.port6
+
+
+|stopwatch|datapath:dpsw
+clk => clk.IN7
+reset => reset.IN7
+cw[0] => cw[0].IN1
+cw[1] => cw[1].IN1
+cw[2] => cw[2].IN1
+cw[3] => cw[3].IN3
+cw[4] => cw[4].IN3
+cw[5] => cw[5].IN3
+tenth <= genericComparator:tenthSecondCompare.port3
+tenHex[0] <= hexToSevenSeg:tenDispHex.port1
+tenHex[1] <= hexToSevenSeg:tenDispHex.port1
+tenHex[2] <= hexToSevenSeg:tenDispHex.port1
+tenHex[3] <= hexToSevenSeg:tenDispHex.port1
+tenHex[4] <= hexToSevenSeg:tenDispHex.port1
+tenHex[5] <= hexToSevenSeg:tenDispHex.port1
+tenHex[6] <= hexToSevenSeg:tenDispHex.port1
+unitHex[0] <= hexToSevenSeg:unitDispHex.port1
+unitHex[1] <= hexToSevenSeg:unitDispHex.port1
+unitHex[2] <= hexToSevenSeg:unitDispHex.port1
+unitHex[3] <= hexToSevenSeg:unitDispHex.port1
+unitHex[4] <= hexToSevenSeg:unitDispHex.port1
+unitHex[5] <= hexToSevenSeg:unitDispHex.port1
+unitHex[6] <= hexToSevenSeg:unitDispHex.port1
+tenthHex[0] <= hexToSevenSeg:tenthDispHex.port1
+tenthHex[1] <= hexToSevenSeg:tenthDispHex.port1
+tenthHex[2] <= hexToSevenSeg:tenthDispHex.port1
+tenthHex[3] <= hexToSevenSeg:tenthDispHex.port1
+tenthHex[4] <= hexToSevenSeg:tenthDispHex.port1
+tenthHex[5] <= hexToSevenSeg:tenthDispHex.port1
+tenthHex[6] <= hexToSevenSeg:tenthDispHex.port1
+
+
+|stopwatch|datapath:dpsw|genericCounter:tenthSecondCounter
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[7]~reg0.CLK
+clk => q[8]~reg0.CLK
+clk => q[9]~reg0.CLK
+clk => q[10]~reg0.CLK
+clk => q[11]~reg0.CLK
+clk => q[12]~reg0.CLK
+clk => q[13]~reg0.CLK
+clk => q[14]~reg0.CLK
+clk => q[15]~reg0.CLK
+clk => q[16]~reg0.CLK
+clk => q[17]~reg0.CLK
+clk => q[18]~reg0.CLK
+clk => q[19]~reg0.CLK
+clk => q[20]~reg0.CLK
+clk => q[21]~reg0.CLK
+clk => q[22]~reg0.CLK
+clk => q[23]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+resetn => q[4]~reg0.ACLR
+resetn => q[5]~reg0.ACLR
+resetn => q[6]~reg0.ACLR
+resetn => q[7]~reg0.ACLR
+resetn => q[8]~reg0.ACLR
+resetn => q[9]~reg0.ACLR
+resetn => q[10]~reg0.ACLR
+resetn => q[11]~reg0.ACLR
+resetn => q[12]~reg0.ACLR
+resetn => q[13]~reg0.ACLR
+resetn => q[14]~reg0.ACLR
+resetn => q[15]~reg0.ACLR
+resetn => q[16]~reg0.ACLR
+resetn => q[17]~reg0.ACLR
+resetn => q[18]~reg0.ACLR
+resetn => q[19]~reg0.ACLR
+resetn => q[20]~reg0.ACLR
+resetn => q[21]~reg0.ACLR
+resetn => q[22]~reg0.ACLR
+resetn => q[23]~reg0.ACLR
+d[0] => Mux23.IN5
+d[1] => Mux22.IN5
+d[2] => Mux21.IN5
+d[3] => Mux20.IN5
+d[4] => Mux19.IN5
+d[5] => Mux18.IN5
+d[6] => Mux17.IN5
+d[7] => Mux16.IN5
+d[8] => Mux15.IN5
+d[9] => Mux14.IN5
+d[10] => Mux13.IN5
+d[11] => Mux12.IN5
+d[12] => Mux11.IN5
+d[13] => Mux10.IN5
+d[14] => Mux9.IN5
+d[15] => Mux8.IN5
+d[16] => Mux7.IN5
+d[17] => Mux6.IN5
+d[18] => Mux5.IN5
+d[19] => Mux4.IN5
+d[20] => Mux3.IN5
+d[21] => Mux2.IN5
+d[22] => Mux1.IN5
+d[23] => Mux0.IN5
+control[0] => Mux0.IN4
+control[0] => Mux1.IN4
+control[0] => Mux2.IN4
+control[0] => Mux3.IN4
+control[0] => Mux4.IN4
+control[0] => Mux5.IN4
+control[0] => Mux6.IN4
+control[0] => Mux7.IN4
+control[0] => Mux8.IN4
+control[0] => Mux9.IN4
+control[0] => Mux10.IN4
+control[0] => Mux11.IN4
+control[0] => Mux12.IN4
+control[0] => Mux13.IN4
+control[0] => Mux14.IN4
+control[0] => Mux15.IN4
+control[0] => Mux16.IN4
+control[0] => Mux17.IN4
+control[0] => Mux18.IN4
+control[0] => Mux19.IN4
+control[0] => Mux20.IN4
+control[0] => Mux21.IN4
+control[0] => Mux22.IN4
+control[0] => Mux23.IN4
+control[1] => Mux0.IN3
+control[1] => Mux1.IN3
+control[1] => Mux2.IN3
+control[1] => Mux3.IN3
+control[1] => Mux4.IN3
+control[1] => Mux5.IN3
+control[1] => Mux6.IN3
+control[1] => Mux7.IN3
+control[1] => Mux8.IN3
+control[1] => Mux9.IN3
+control[1] => Mux10.IN3
+control[1] => Mux11.IN3
+control[1] => Mux12.IN3
+control[1] => Mux13.IN3
+control[1] => Mux14.IN3
+control[1] => Mux15.IN3
+control[1] => Mux16.IN3
+control[1] => Mux17.IN3
+control[1] => Mux18.IN3
+control[1] => Mux19.IN3
+control[1] => Mux20.IN3
+control[1] => Mux21.IN3
+control[1] => Mux22.IN3
+control[1] => Mux23.IN3
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[13] <= q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[14] <= q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[15] <= q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[16] <= q[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[17] <= q[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[18] <= q[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[19] <= q[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[20] <= q[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[21] <= q[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[22] <= q[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[23] <= q[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericComparator:tenthSecondCompare
+x[0] => LessThan0.IN24
+x[0] => Equal0.IN23
+x[0] => LessThan1.IN24
+x[1] => LessThan0.IN23
+x[1] => Equal0.IN22
+x[1] => LessThan1.IN23
+x[2] => LessThan0.IN22
+x[2] => Equal0.IN21
+x[2] => LessThan1.IN22
+x[3] => LessThan0.IN21
+x[3] => Equal0.IN20
+x[3] => LessThan1.IN21
+x[4] => LessThan0.IN20
+x[4] => Equal0.IN19
+x[4] => LessThan1.IN20
+x[5] => LessThan0.IN19
+x[5] => Equal0.IN18
+x[5] => LessThan1.IN19
+x[6] => LessThan0.IN18
+x[6] => Equal0.IN17
+x[6] => LessThan1.IN18
+x[7] => LessThan0.IN17
+x[7] => Equal0.IN16
+x[7] => LessThan1.IN17
+x[8] => LessThan0.IN16
+x[8] => Equal0.IN15
+x[8] => LessThan1.IN16
+x[9] => LessThan0.IN15
+x[9] => Equal0.IN14
+x[9] => LessThan1.IN15
+x[10] => LessThan0.IN14
+x[10] => Equal0.IN13
+x[10] => LessThan1.IN14
+x[11] => LessThan0.IN13
+x[11] => Equal0.IN12
+x[11] => LessThan1.IN13
+x[12] => LessThan0.IN12
+x[12] => Equal0.IN11
+x[12] => LessThan1.IN12
+x[13] => LessThan0.IN11
+x[13] => Equal0.IN10
+x[13] => LessThan1.IN11
+x[14] => LessThan0.IN10
+x[14] => Equal0.IN9
+x[14] => LessThan1.IN10
+x[15] => LessThan0.IN9
+x[15] => Equal0.IN8
+x[15] => LessThan1.IN9
+x[16] => LessThan0.IN8
+x[16] => Equal0.IN7
+x[16] => LessThan1.IN8
+x[17] => LessThan0.IN7
+x[17] => Equal0.IN6
+x[17] => LessThan1.IN7
+x[18] => LessThan0.IN6
+x[18] => Equal0.IN5
+x[18] => LessThan1.IN6
+x[19] => LessThan0.IN5
+x[19] => Equal0.IN4
+x[19] => LessThan1.IN5
+x[20] => LessThan0.IN4
+x[20] => Equal0.IN3
+x[20] => LessThan1.IN4
+x[21] => LessThan0.IN3
+x[21] => Equal0.IN2
+x[21] => LessThan1.IN3
+x[22] => LessThan0.IN2
+x[22] => Equal0.IN1
+x[22] => LessThan1.IN2
+x[23] => LessThan0.IN1
+x[23] => Equal0.IN0
+x[23] => LessThan1.IN1
+y[0] => LessThan0.IN48
+y[0] => Equal0.IN47
+y[0] => LessThan1.IN48
+y[1] => LessThan0.IN47
+y[1] => Equal0.IN46
+y[1] => LessThan1.IN47
+y[2] => LessThan0.IN46
+y[2] => Equal0.IN45
+y[2] => LessThan1.IN46
+y[3] => LessThan0.IN45
+y[3] => Equal0.IN44
+y[3] => LessThan1.IN45
+y[4] => LessThan0.IN44
+y[4] => Equal0.IN43
+y[4] => LessThan1.IN44
+y[5] => LessThan0.IN43
+y[5] => Equal0.IN42
+y[5] => LessThan1.IN43
+y[6] => LessThan0.IN42
+y[6] => Equal0.IN41
+y[6] => LessThan1.IN42
+y[7] => LessThan0.IN41
+y[7] => Equal0.IN40
+y[7] => LessThan1.IN41
+y[8] => LessThan0.IN40
+y[8] => Equal0.IN39
+y[8] => LessThan1.IN40
+y[9] => LessThan0.IN39
+y[9] => Equal0.IN38
+y[9] => LessThan1.IN39
+y[10] => LessThan0.IN38
+y[10] => Equal0.IN37
+y[10] => LessThan1.IN38
+y[11] => LessThan0.IN37
+y[11] => Equal0.IN36
+y[11] => LessThan1.IN37
+y[12] => LessThan0.IN36
+y[12] => Equal0.IN35
+y[12] => LessThan1.IN36
+y[13] => LessThan0.IN35
+y[13] => Equal0.IN34
+y[13] => LessThan1.IN35
+y[14] => LessThan0.IN34
+y[14] => Equal0.IN33
+y[14] => LessThan1.IN34
+y[15] => LessThan0.IN33
+y[15] => Equal0.IN32
+y[15] => LessThan1.IN33
+y[16] => LessThan0.IN32
+y[16] => Equal0.IN31
+y[16] => LessThan1.IN32
+y[17] => LessThan0.IN31
+y[17] => Equal0.IN30
+y[17] => LessThan1.IN31
+y[18] => LessThan0.IN30
+y[18] => Equal0.IN29
+y[18] => LessThan1.IN30
+y[19] => LessThan0.IN29
+y[19] => Equal0.IN28
+y[19] => LessThan1.IN29
+y[20] => LessThan0.IN28
+y[20] => Equal0.IN27
+y[20] => LessThan1.IN28
+y[21] => LessThan0.IN27
+y[21] => Equal0.IN26
+y[21] => LessThan1.IN27
+y[22] => LessThan0.IN26
+y[22] => Equal0.IN25
+y[22] => LessThan1.IN26
+y[23] => LessThan0.IN25
+y[23] => Equal0.IN24
+y[23] => LessThan1.IN25
+gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+eq <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+lt <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter
+clk => clk.IN1
+resetn => resetn.IN1
+enb => Decoder0.IN0
+enb => Decoder1.IN0
+enb => Mux0.IN8
+enb => Mux1.IN8
+synch => Decoder0.IN1
+synch => Decoder1.IN1
+synch => Mux0.IN9
+synch => Mux1.IN9
+roll <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+currentCount[0] <= currentCount[0].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[1] <= currentCount[1].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[2] <= currentCount[2].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[3] <= currentCount[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c
+x[0] => LessThan0.IN4
+x[0] => Equal0.IN3
+x[0] => LessThan1.IN4
+x[1] => LessThan0.IN3
+x[1] => Equal0.IN2
+x[1] => LessThan1.IN3
+x[2] => LessThan0.IN2
+x[2] => Equal0.IN1
+x[2] => LessThan1.IN2
+x[3] => LessThan0.IN1
+x[3] => Equal0.IN0
+x[3] => LessThan1.IN1
+y[0] => LessThan0.IN8
+y[0] => Equal0.IN7
+y[0] => LessThan1.IN8
+y[1] => LessThan0.IN7
+y[1] => Equal0.IN6
+y[1] => LessThan1.IN7
+y[2] => LessThan0.IN6
+y[2] => Equal0.IN5
+y[2] => LessThan1.IN6
+y[3] => LessThan0.IN5
+y[3] => Equal0.IN4
+y[3] => LessThan1.IN5
+gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+eq <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+lt <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+carryin => C[0].IN1
+S[0] <= fullAdder:addblock[0].stage.port3
+S[1] <= fullAdder:addblock[1].stage.port3
+S[2] <= fullAdder:addblock[2].stage.port3
+S[3] <= fullAdder:addblock[3].stage.port3
+carryout <= C[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[0].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[1].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[2].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[3].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement
+y1[0] => f.DATAA
+y1[1] => f.DATAA
+y1[2] => f.DATAA
+y1[3] => f.DATAA
+y0[0] => f.DATAB
+y0[1] => f.DATAB
+y0[2] => f.DATAB
+y0[3] => f.DATAB
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+f[0] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericRegister:register
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+control => Decoder0.IN0
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter
+clk => clk.IN1
+resetn => resetn.IN1
+enb => Decoder0.IN0
+enb => Decoder1.IN0
+enb => Mux0.IN8
+enb => Mux1.IN8
+synch => Decoder0.IN1
+synch => Decoder1.IN1
+synch => Mux0.IN9
+synch => Mux1.IN9
+roll <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+currentCount[0] <= currentCount[0].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[1] <= currentCount[1].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[2] <= currentCount[2].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[3] <= currentCount[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericComparator:eq9c
+x[0] => LessThan0.IN4
+x[0] => Equal0.IN3
+x[0] => LessThan1.IN4
+x[1] => LessThan0.IN3
+x[1] => Equal0.IN2
+x[1] => LessThan1.IN3
+x[2] => LessThan0.IN2
+x[2] => Equal0.IN1
+x[2] => LessThan1.IN2
+x[3] => LessThan0.IN1
+x[3] => Equal0.IN0
+x[3] => LessThan1.IN1
+y[0] => LessThan0.IN8
+y[0] => Equal0.IN7
+y[0] => LessThan1.IN8
+y[1] => LessThan0.IN7
+y[1] => Equal0.IN6
+y[1] => LessThan1.IN7
+y[2] => LessThan0.IN6
+y[2] => Equal0.IN5
+y[2] => LessThan1.IN6
+y[3] => LessThan0.IN5
+y[3] => Equal0.IN4
+y[3] => LessThan1.IN5
+gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+eq <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+lt <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+carryin => C[0].IN1
+S[0] <= fullAdder:addblock[0].stage.port3
+S[1] <= fullAdder:addblock[1].stage.port3
+S[2] <= fullAdder:addblock[2].stage.port3
+S[3] <= fullAdder:addblock[3].stage.port3
+carryout <= C[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer|fullAdder:addblock[0].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer|fullAdder:addblock[1].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer|fullAdder:addblock[2].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer|fullAdder:addblock[3].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericMux2x1:zeroOrIncrement
+y1[0] => f.DATAA
+y1[1] => f.DATAA
+y1[2] => f.DATAA
+y1[3] => f.DATAA
+y0[0] => f.DATAB
+y0[1] => f.DATAB
+y0[2] => f.DATAB
+y0[3] => f.DATAB
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+f[0] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericRegister:register
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+control => Decoder0.IN0
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter
+clk => clk.IN1
+resetn => resetn.IN1
+enb => Decoder0.IN0
+enb => Decoder1.IN0
+enb => Mux0.IN8
+enb => Mux1.IN8
+synch => Decoder0.IN1
+synch => Decoder1.IN1
+synch => Mux0.IN9
+synch => Mux1.IN9
+roll <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+currentCount[0] <= currentCount[0].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[1] <= currentCount[1].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[2] <= currentCount[2].DB_MAX_OUTPUT_PORT_TYPE
+currentCount[3] <= currentCount[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericComparator:eq9c
+x[0] => LessThan0.IN4
+x[0] => Equal0.IN3
+x[0] => LessThan1.IN4
+x[1] => LessThan0.IN3
+x[1] => Equal0.IN2
+x[1] => LessThan1.IN3
+x[2] => LessThan0.IN2
+x[2] => Equal0.IN1
+x[2] => LessThan1.IN2
+x[3] => LessThan0.IN1
+x[3] => Equal0.IN0
+x[3] => LessThan1.IN1
+y[0] => LessThan0.IN8
+y[0] => Equal0.IN7
+y[0] => LessThan1.IN8
+y[1] => LessThan0.IN7
+y[1] => Equal0.IN6
+y[1] => LessThan1.IN7
+y[2] => LessThan0.IN6
+y[2] => Equal0.IN5
+y[2] => LessThan1.IN6
+y[3] => LessThan0.IN5
+y[3] => Equal0.IN4
+y[3] => LessThan1.IN5
+gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+eq <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+lt <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+carryin => C[0].IN1
+S[0] <= fullAdder:addblock[0].stage.port3
+S[1] <= fullAdder:addblock[1].stage.port3
+S[2] <= fullAdder:addblock[2].stage.port3
+S[3] <= fullAdder:addblock[3].stage.port3
+carryout <= C[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer|fullAdder:addblock[0].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer|fullAdder:addblock[1].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer|fullAdder:addblock[2].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer|fullAdder:addblock[3].stage
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericMux2x1:zeroOrIncrement
+y1[0] => f.DATAA
+y1[1] => f.DATAA
+y1[2] => f.DATAA
+y1[3] => f.DATAA
+y0[0] => f.DATAB
+y0[1] => f.DATAB
+y0[2] => f.DATAB
+y0[3] => f.DATAB
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+f[0] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericRegister:register
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+control => Decoder0.IN0
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericRegister:tenthReg
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+control => Decoder0.IN0
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericRegister:unitReg
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+control => Decoder0.IN0
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericRegister:tenReg
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+resetn => q[0]~reg0.ACLR
+resetn => q[1]~reg0.ACLR
+resetn => q[2]~reg0.ACLR
+resetn => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+control => Decoder0.IN0
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericMux2x1:tenthMux
+y1[0] => f.DATAA
+y1[1] => f.DATAA
+y1[2] => f.DATAA
+y1[3] => f.DATAA
+y0[0] => f.DATAB
+y0[1] => f.DATAB
+y0[2] => f.DATAB
+y0[3] => f.DATAB
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+f[0] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericMux2x1:unitMux
+y1[0] => f.DATAA
+y1[1] => f.DATAA
+y1[2] => f.DATAA
+y1[3] => f.DATAA
+y0[0] => f.DATAB
+y0[1] => f.DATAB
+y0[2] => f.DATAB
+y0[3] => f.DATAB
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+f[0] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|genericMux2x1:tenMux
+y1[0] => f.DATAA
+y1[1] => f.DATAA
+y1[2] => f.DATAA
+y1[3] => f.DATAA
+y0[0] => f.DATAB
+y0[1] => f.DATAB
+y0[2] => f.DATAB
+y0[3] => f.DATAB
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+sel => f.OUTPUTSELECT
+f[0] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|hexToSevenSeg:tenthDispHex
+x[0] => Decoder0.IN3
+x[1] => Decoder0.IN2
+x[2] => Decoder0.IN1
+x[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|hexToSevenSeg:unitDispHex
+x[0] => Decoder0.IN3
+x[1] => Decoder0.IN2
+x[2] => Decoder0.IN1
+x[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|datapath:dpsw|hexToSevenSeg:tenDispHex
+x[0] => Decoder0.IN3
+x[1] => Decoder0.IN2
+x[2] => Decoder0.IN1
+x[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|stopwatch|controlUnit:cpsw
+clk => state~1.DATAIN
+reset => state~3.DATAIN
+cw[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+cw[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+cw[2] <= cw.DB_MAX_OUTPUT_PORT_TYPE
+cw[3] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+cw[4] <= cw[4].DB_MAX_OUTPUT_PORT_TYPE
+cw[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+sw[0] => Decoder0.IN0
+sw[1] => Equal0.IN2
+sw[1] => Decoder0.IN1
+sw[1] => Equal1.IN2
+sw[1] => Equal2.IN2
+sw[2] => Equal0.IN3
+sw[2] => Decoder0.IN2
+sw[2] => Equal1.IN3
+sw[2] => Equal2.IN3
+
+

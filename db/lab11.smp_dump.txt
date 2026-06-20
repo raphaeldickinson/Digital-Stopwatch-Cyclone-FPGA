@@ -1,0 +1,18 @@
+
+State Machine - |stopwatch|controlUnit:cpsw|state
+Name state.LS2LR_STATE state.LS2R_STATE state.LAPSTOP_STATE state.LAPINC_STATE state.LR2LS_STATE state.LR2R_STATE state.LAPRUN_STATE state.INC_STATE state.R2S_STATE state.R2LR_STATE state.RUN_STATE state.S2R_STATE state.S2RES_STATE state.STOP_STATE state.RESET_STATE 
+state.RESET_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.STOP_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.S2RES_STATE 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.S2R_STATE 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.RUN_STATE 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.R2LR_STATE 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.R2S_STATE 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.INC_STATE 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.LAPRUN_STATE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.LR2R_STATE 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.LR2LS_STATE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.LAPINC_STATE 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.LAPSTOP_STATE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LS2R_STATE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LS2LR_STATE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

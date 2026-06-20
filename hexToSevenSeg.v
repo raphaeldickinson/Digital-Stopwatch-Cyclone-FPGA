@@ -1,0 +1,47 @@
+
+//
+//	Active low LEDs on segments
+//
+//            seg[0]
+//            ------
+//   seg[5]  |      |   seg[1]
+//           |      |
+//            ------    seg[6]
+//   seg[4]  |      |
+//           |      |   seg[2]
+//            ------
+//            seg[3]
+//
+//  Comments can really help our thinking
+//
+//------------------------------------------
+module hexToSevenSeg(x, sevenSeg);
+
+    output reg [6:0] sevenSeg;
+    input [3:0] x;
+
+    //------------------------------------------------
+    // You will need to fill in the missing 15 rows
+    //------------------------------------------------
+
+    always @(x)
+        case (x)
+            4'b0000: sevenSeg = 7'b1000000;
+				4'b0001: sevenSeg = 7'b1111001;
+				4'b0010: sevenSeg = 7'b0100100;
+				4'b0011: sevenSeg = 7'b0110000;
+				4'b0100: sevenSeg = 7'b0011001;
+				4'b0101: sevenSeg = 7'b0010010;
+				4'b0110: sevenSeg = 7'b0000010;
+				4'b0111: sevenSeg = 7'b1111000;
+				4'b1000: sevenSeg = 7'b0000000;
+				4'b1001: sevenSeg = 7'b0011000;
+				4'b1010: sevenSeg = 7'b0100000;
+				4'b1011: sevenSeg = 7'b0000011;
+				4'b1100: sevenSeg = 7'b1000110;
+				4'b1101: sevenSeg = 7'b0100001;
+				4'b1110: sevenSeg = 7'b0000110;
+				4'b1111: sevenSeg = 7'b0001110;
+
+        endcase
+endmodule

@@ -1,0 +1,789 @@
+Analysis & Synthesis report for lab11
+Tue Dec  9 20:55:56 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |stopwatch|controlUnit:cpsw|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |stopwatch
+ 13. Parameter Settings for User Entity Instance: datapath:dpsw
+ 14. Parameter Settings for User Entity Instance: datapath:dpsw|genericCounter:tenthSecondCounter
+ 15. Parameter Settings for User Entity Instance: datapath:dpsw|genericComparator:tenthSecondCompare
+ 16. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c
+ 17. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer
+ 18. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement
+ 19. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericRegister:register
+ 20. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericComparator:eq9c
+ 21. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer
+ 22. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericMux2x1:zeroOrIncrement
+ 23. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericRegister:register
+ 24. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericComparator:eq9c
+ 25. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer
+ 26. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericMux2x1:zeroOrIncrement
+ 27. Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericRegister:register
+ 28. Parameter Settings for User Entity Instance: datapath:dpsw|genericRegister:tenthReg
+ 29. Parameter Settings for User Entity Instance: datapath:dpsw|genericRegister:unitReg
+ 30. Parameter Settings for User Entity Instance: datapath:dpsw|genericRegister:tenReg
+ 31. Parameter Settings for User Entity Instance: datapath:dpsw|genericMux2x1:tenthMux
+ 32. Parameter Settings for User Entity Instance: datapath:dpsw|genericMux2x1:unitMux
+ 33. Parameter Settings for User Entity Instance: datapath:dpsw|genericMux2x1:tenMux
+ 34. Parameter Settings for User Entity Instance: controlUnit:cpsw
+ 35. Port Connectivity Checks: "datapath:dpsw|mod10counter:tenMod10Counter"
+ 36. Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement"
+ 37. Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[3].stage"
+ 38. Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer"
+ 39. Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c"
+ 40. Port Connectivity Checks: "datapath:dpsw|genericComparator:tenthSecondCompare"
+ 41. Port Connectivity Checks: "datapath:dpsw|genericCounter:tenthSecondCounter"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Dec  9 20:55:56 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; lab11                                          ;
+; Top-level Entity Name           ; stopwatch                                      ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 63                                             ;
+; Total pins                      ; 25                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
+; Top-level entity name                                                           ; stopwatch          ; lab11              ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 28          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path         ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+; stopwatch.v                      ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/stopwatch.v         ;         ;
+; mod10counter.v                   ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/mod10counter.v      ;         ;
+; hexToSevenSeg.v                  ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/hexToSevenSeg.v     ;         ;
+; genericRegister.v                ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/genericRegister.v   ;         ;
+; genericMux2x1.v                  ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/genericMux2x1.v     ;         ;
+; genericCounter.v                 ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/genericCounter.v    ;         ;
+; genericComparator.v              ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/genericComparator.v ;         ;
+; genericAdder.v                   ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/genericAdder.v      ;         ;
+; fullAdder.v                      ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/fullAdder.v         ;         ;
+; datapath.v                       ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/datapath.v          ;         ;
+; controlUnit.v                    ; yes             ; User Verilog HDL File  ; Z:/Desktop/lab11/controlUnit.v       ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 53        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 98        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 6         ;
+;     -- 5 input functions                    ; 18        ;
+;     -- 4 input functions                    ; 33        ;
+;     -- <=3 input functions                  ; 41        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 63        ;
+;                                             ;           ;
+; I/O pins                                    ; 25        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 63        ;
+; Total fan-out                               ; 661       ;
+; Average fan-out                             ; 3.13      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------+-------------------+--------------+
+; |stopwatch                                   ; 98 (0)              ; 63 (0)                    ; 0                 ; 0          ; 25   ; 0            ; |stopwatch                                                                            ; stopwatch         ; work         ;
+;    |controlUnit:cpsw|                        ; 20 (20)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|controlUnit:cpsw                                                           ; controlUnit       ; work         ;
+;    |datapath:dpsw|                           ; 78 (0)              ; 48 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw                                                              ; datapath          ; work         ;
+;       |genericComparator:tenthSecondCompare| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericComparator:tenthSecondCompare                         ; genericComparator ; work         ;
+;       |genericCounter:tenthSecondCounter|    ; 24 (24)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericCounter:tenthSecondCounter                            ; genericCounter    ; work         ;
+;       |genericMux2x1:tenMux|                 ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericMux2x1:tenMux                                         ; genericMux2x1     ; work         ;
+;       |genericMux2x1:tenthMux|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericMux2x1:tenthMux                                       ; genericMux2x1     ; work         ;
+;       |genericMux2x1:unitMux|                ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericMux2x1:unitMux                                        ; genericMux2x1     ; work         ;
+;       |genericRegister:tenReg|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericRegister:tenReg                                       ; genericRegister   ; work         ;
+;       |genericRegister:tenthReg|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericRegister:tenthReg                                     ; genericRegister   ; work         ;
+;       |genericRegister:unitReg|              ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|genericRegister:unitReg                                      ; genericRegister   ; work         ;
+;       |hexToSevenSeg:tenDispHex|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|hexToSevenSeg:tenDispHex                                     ; hexToSevenSeg     ; work         ;
+;       |hexToSevenSeg:tenthDispHex|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|hexToSevenSeg:tenthDispHex                                   ; hexToSevenSeg     ; work         ;
+;       |hexToSevenSeg:unitDispHex|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|hexToSevenSeg:unitDispHex                                    ; hexToSevenSeg     ; work         ;
+;       |mod10counter:tenMod10Counter|         ; 6 (2)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenMod10Counter                                 ; mod10counter      ; work         ;
+;          |genericMux2x1:zeroOrIncrement|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericMux2x1:zeroOrIncrement   ; genericMux2x1     ; work         ;
+;          |genericRegister:register|          ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenMod10Counter|genericRegister:register        ; genericRegister   ; work         ;
+;       |mod10counter:tenthMod10Counter|       ; 5 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter                               ; mod10counter      ; work         ;
+;          |genericComparator:eq9c|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c        ; genericComparator ; work         ;
+;          |genericMux2x1:zeroOrIncrement|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement ; genericMux2x1     ; work         ;
+;          |genericRegister:register|          ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:tenthMod10Counter|genericRegister:register      ; genericRegister   ; work         ;
+;       |mod10counter:unitMod10Counter|        ; 5 (1)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:unitMod10Counter                                ; mod10counter      ; work         ;
+;          |genericMux2x1:zeroOrIncrement|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericMux2x1:zeroOrIncrement  ; genericMux2x1     ; work         ;
+;          |genericRegister:register|          ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|datapath:dpsw|mod10counter:unitMod10Counter|genericRegister:register       ; genericRegister   ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |stopwatch|controlUnit:cpsw|state                                                                                                                                                                                                                                                                       ;
++---------------------+-------------------+------------------+---------------------+--------------------+-------------------+------------------+--------------------+-----------------+-----------------+------------------+-----------------+-----------------+-------------------+------------------+-------------------+
+; Name                ; state.LS2LR_STATE ; state.LS2R_STATE ; state.LAPSTOP_STATE ; state.LAPINC_STATE ; state.LR2LS_STATE ; state.LR2R_STATE ; state.LAPRUN_STATE ; state.INC_STATE ; state.R2S_STATE ; state.R2LR_STATE ; state.RUN_STATE ; state.S2R_STATE ; state.S2RES_STATE ; state.STOP_STATE ; state.RESET_STATE ;
++---------------------+-------------------+------------------+---------------------+--------------------+-------------------+------------------+--------------------+-----------------+-----------------+------------------+-----------------+-----------------+-------------------+------------------+-------------------+
+; state.RESET_STATE   ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 0                 ;
+; state.STOP_STATE    ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 1                ; 1                 ;
+; state.S2RES_STATE   ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 1                 ; 0                ; 1                 ;
+; state.S2R_STATE     ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 1               ; 0                 ; 0                ; 1                 ;
+; state.RUN_STATE     ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 1               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.R2LR_STATE    ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 1                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.R2S_STATE     ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 1               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.INC_STATE     ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 1               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LAPRUN_STATE  ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 1                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LR2R_STATE    ; 0                 ; 0                ; 0                   ; 0                  ; 0                 ; 1                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LR2LS_STATE   ; 0                 ; 0                ; 0                   ; 0                  ; 1                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LAPINC_STATE  ; 0                 ; 0                ; 0                   ; 1                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LAPSTOP_STATE ; 0                 ; 0                ; 1                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LS2R_STATE    ; 0                 ; 1                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
+; state.LS2LR_STATE   ; 1                 ; 0                ; 0                   ; 0                  ; 0                 ; 0                ; 0                  ; 0               ; 0               ; 0                ; 0               ; 0               ; 0                 ; 0                ; 1                 ;
++---------------------+-------------------+------------------+---------------------+--------------------+-------------------+------------------+--------------------+-----------------+-----------------+------------------+-----------------+-----------------+-------------------+------------------+-------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; controlUnit:cpsw|state~4              ; Lost fanout        ;
+; controlUnit:cpsw|state~5              ; Lost fanout        ;
+; controlUnit:cpsw|state~6              ; Lost fanout        ;
+; controlUnit:cpsw|state~7              ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 63    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 4:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |stopwatch|datapath:dpsw|genericCounter:tenthSecondCounter|q[11] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |stopwatch ;
++------------------+-------+------------------------------------------------+
+; Parameter Name   ; Value ; Type                                           ;
++------------------+-------+------------------------------------------------+
+; SW_VECTOR_LENGTH ; 3     ; Signed Integer                                 ;
+; CW_VECTOR_LENGTH ; 6     ; Signed Integer                                 ;
++------------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; N              ; 24    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericCounter:tenthSecondCounter ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; N              ; 24    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericComparator:tenthSecondCompare ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; N              ; 24    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenthMod10Counter|genericRegister:register ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericComparator:eq9c ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericAdder:incrementer ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericMux2x1:zeroOrIncrement ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:unitMod10Counter|genericRegister:register ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericComparator:eq9c ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericAdder:incrementer ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericMux2x1:zeroOrIncrement ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|mod10counter:tenMod10Counter|genericRegister:register ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericRegister:tenthReg ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericRegister:unitReg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericRegister:tenReg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericMux2x1:tenthMux ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericMux2x1:unitMux ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dpsw|genericMux2x1:tenMux ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlUnit:cpsw ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; RESET_STATE    ; 0000  ; Unsigned Binary                      ;
+; STOP_STATE     ; 0001  ; Unsigned Binary                      ;
+; S2RES_STATE    ; 0010  ; Unsigned Binary                      ;
+; S2R_STATE      ; 0011  ; Unsigned Binary                      ;
+; RUN_STATE      ; 0100  ; Unsigned Binary                      ;
+; R2LR_STATE     ; 0101  ; Unsigned Binary                      ;
+; R2S_STATE      ; 0110  ; Unsigned Binary                      ;
+; INC_STATE      ; 0111  ; Unsigned Binary                      ;
+; LAPRUN_STATE   ; 1000  ; Unsigned Binary                      ;
+; LR2R_STATE     ; 1001  ; Unsigned Binary                      ;
+; LR2LS_STATE    ; 1010  ; Unsigned Binary                      ;
+; LAPINC_STATE   ; 1011  ; Unsigned Binary                      ;
+; LAPSTOP_STATE  ; 1100  ; Unsigned Binary                      ;
+; LS2R_STATE     ; 1101  ; Unsigned Binary                      ;
+; LS2LR_STATE    ; 1110  ; Unsigned Binary                      ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|mod10counter:tenMod10Counter" ;
++------+--------+----------+---------------------------------------------+
+; Port ; Type   ; Severity ; Details                                     ;
++------+--------+----------+---------------------------------------------+
+; roll ; Output ; Info     ; Explicitly unconnected                      ;
++------+--------+----------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; y0   ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[3].stage" ;
++------+--------+----------+----------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                            ;
++------+--------+----------+----------------------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                ;
++------+--------+----------+----------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer"                                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                                          ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[3..1]     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; A[0]        ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; carryin     ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; carryin[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; carryout    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c"                                        ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; y[2..1] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[3]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; y[0]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; gt      ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; lt      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|genericComparator:tenthSecondCompare"                                                           ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; y[19..18] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; y[9..8]   ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; y[21..20] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[17..15] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[13..12] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[5..0]   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[23]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[22]     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; y[14]     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; y[11]     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; y[10]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[7]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; y[6]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; gt        ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; lt        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dpsw|genericCounter:tenthSecondCounter" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d    ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 63                          ;
+;     CLR               ; 15                          ;
+;     ENA CLR           ; 24                          ;
+;     ENA CLR SCLR      ; 24                          ;
+; arriav_lcell_comb     ; 101                         ;
+;     arith             ; 24                          ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 77                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 33                          ;
+;         5 data inputs ; 18                          ;
+;         6 data inputs ; 6                           ;
+; boundary_port         ; 25                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.30                        ;
+; Average LUT depth     ; 2.98                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Tue Dec  9 20:55:32 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab11 -c lab11
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file stopwatch_tb.v
+    Info (12023): Found entity 1: stopWatch_tb File: Z:/Desktop/lab11/stopWatch_tb.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: Z:/Desktop/lab11/stopwatch.v Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file mod10counter_tb.v
+    Info (12023): Found entity 1: mod10counter_tb File: Z:/Desktop/lab11/mod10counter_tb.v Line: 21
+Warning (10275): Verilog HDL Module Instantiation warning at mod10counter.v(32): ignored dangling comma in List of Port Connections File: Z:/Desktop/lab11/mod10counter.v Line: 32
+Warning (10275): Verilog HDL Module Instantiation warning at mod10counter.v(34): ignored dangling comma in List of Port Connections File: Z:/Desktop/lab11/mod10counter.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file mod10counter.v
+    Info (12023): Found entity 1: mod10counter File: Z:/Desktop/lab11/mod10counter.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file hextosevenseg.v
+    Info (12023): Found entity 1: hexToSevenSeg File: Z:/Desktop/lab11/hexToSevenSeg.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file genericregister.v
+    Info (12023): Found entity 1: genericRegister File: Z:/Desktop/lab11/genericRegister.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file genericmux2x1.v
+    Info (12023): Found entity 1: genericMux2x1 File: Z:/Desktop/lab11/genericMux2x1.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file genericcounter.v
+    Info (12023): Found entity 1: genericCounter File: Z:/Desktop/lab11/genericCounter.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file genericcomparator.v
+    Info (12023): Found entity 1: genericComparator File: Z:/Desktop/lab11/genericComparator.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file genericadder.v
+    Info (12023): Found entity 1: genericAdder File: Z:/Desktop/lab11/genericAdder.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder.v
+    Info (12023): Found entity 1: fullAdder File: Z:/Desktop/lab11/fullAdder.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file dffnegedge.v
+    Info (12023): Found entity 1: dffNegEdge File: Z:/Desktop/lab11/dffNegEdge.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
+    Info (12023): Found entity 1: datapath_tb File: Z:/Desktop/lab11/datapath_tb.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
+    Info (12023): Found entity 1: datapath File: Z:/Desktop/lab11/datapath.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file controlunit_tb.v
+    Info (12023): Found entity 1: controlUnit_tb File: Z:/Desktop/lab11/controlUnit_tb.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file controlunit.v
+    Info (12023): Found entity 1: controlUnit File: Z:/Desktop/lab11/controlUnit.v Line: 20
+Info (12127): Elaborating entity "stopwatch" for the top level hierarchy
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:dpsw" File: Z:/Desktop/lab11/stopwatch.v Line: 46
+Info (12128): Elaborating entity "genericCounter" for hierarchy "datapath:dpsw|genericCounter:tenthSecondCounter" File: Z:/Desktop/lab11/datapath.v Line: 42
+Info (12128): Elaborating entity "genericComparator" for hierarchy "datapath:dpsw|genericComparator:tenthSecondCompare" File: Z:/Desktop/lab11/datapath.v Line: 43
+Info (12128): Elaborating entity "mod10counter" for hierarchy "datapath:dpsw|mod10counter:tenthMod10Counter" File: Z:/Desktop/lab11/datapath.v Line: 47
+Info (12128): Elaborating entity "genericComparator" for hierarchy "datapath:dpsw|mod10counter:tenthMod10Counter|genericComparator:eq9c" File: Z:/Desktop/lab11/mod10counter.v Line: 32
+Info (12128): Elaborating entity "genericAdder" for hierarchy "datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer" File: Z:/Desktop/lab11/mod10counter.v Line: 34
+Info (12128): Elaborating entity "fullAdder" for hierarchy "datapath:dpsw|mod10counter:tenthMod10Counter|genericAdder:incrementer|fullAdder:addblock[0].stage" File: Z:/Desktop/lab11/genericAdder.v Line: 26
+Info (12128): Elaborating entity "genericMux2x1" for hierarchy "datapath:dpsw|mod10counter:tenthMod10Counter|genericMux2x1:zeroOrIncrement" File: Z:/Desktop/lab11/mod10counter.v Line: 36
+Info (12128): Elaborating entity "genericRegister" for hierarchy "datapath:dpsw|mod10counter:tenthMod10Counter|genericRegister:register" File: Z:/Desktop/lab11/mod10counter.v Line: 38
+Info (12128): Elaborating entity "hexToSevenSeg" for hierarchy "datapath:dpsw|hexToSevenSeg:tenthDispHex" File: Z:/Desktop/lab11/datapath.v Line: 59
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:cpsw" File: Z:/Desktop/lab11/stopwatch.v Line: 47
+Info (10264): Verilog HDL Case Statement information at controlUnit.v(84): all case item expressions in this case statement are onehot File: Z:/Desktop/lab11/controlUnit.v Line: 84
+Info (10264): Verilog HDL Case Statement information at controlUnit.v(115): all case item expressions in this case statement are onehot File: Z:/Desktop/lab11/controlUnit.v Line: 115
+Info (10264): Verilog HDL Case Statement information at controlUnit.v(199): all case item expressions in this case statement are onehot File: Z:/Desktop/lab11/controlUnit.v Line: 199
+Warning (12020): Port "ordered port 2" on the entity instantiation of "incrementer" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: Z:/Desktop/lab11/mod10counter.v Line: 34
+Warning (12020): Port "ordered port 2" on the entity instantiation of "incrementer" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: Z:/Desktop/lab11/mod10counter.v Line: 34
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "datapath:dpsw|mod10counter:tenMod10Counter|muxSel" feeding internal logic into a wire File: Z:/Desktop/lab11/mod10counter.v Line: 16
+    Warning (13049): Converted tri-state buffer "datapath:dpsw|mod10counter:unitMod10Counter|muxSel" feeding internal logic into a wire File: Z:/Desktop/lab11/mod10counter.v Line: 16
+    Warning (13049): Converted tri-state buffer "datapath:dpsw|mod10counter:tenthMod10Counter|muxSel" feeding internal logic into a wire File: Z:/Desktop/lab11/mod10counter.v Line: 16
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 135 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 110 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Tue Dec  9 20:55:57 2025
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:16
+
+

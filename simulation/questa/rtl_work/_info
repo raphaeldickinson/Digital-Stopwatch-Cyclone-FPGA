@@ -1,0 +1,322 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dZ:/Desktop/lab11/simulation/questa
+T_opt
+!s110 1765337163
+VE<a9Rc?Lkl`aQG83QZd7J3
+04 12 4 work stopWatch_tb fast 0
+=1-4cd7179d75de-6938e849-5-4280
+R0
+!s12b OEM100
+!s124 OEM10U42 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vcontrolUnit
+2Z:/Desktop/lab11/controlUnit.v
+!s110 1765337147
+!i10b 1
+!s100 iWJB4zLnRXCh7m?iMz2Gn2
+ISAAYeQZhcdGVHSMa1cQP50
+R1
+w1765336101
+8Z:/Desktop/lab11/controlUnit.v
+FZ:/Desktop/lab11/controlUnit.v
+!i122 11
+L0 20 221
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1765337147.000000
+!s107 Z:/Desktop/lab11/controlUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/controlUnit.v|
+!i113 0
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 !s92 -vlog01compat -work work +incdir+Z:/Desktop/lab11 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+ncontrol@unit
+vdatapath
+2Z:/Desktop/lab11/datapath.v
+!s110 1765337146
+!i10b 1
+!s100 6lJkI1[^gLJ7>zPg5UgE<2
+IC]TiLZMHiYK]@Q6[32z<?0
+R1
+w1765336608
+8Z:/Desktop/lab11/datapath.v
+FZ:/Desktop/lab11/datapath.v
+!i122 10
+L0 20 44
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337146.000000
+!s107 Z:/Desktop/lab11/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/datapath.v|
+!i113 0
+R5
+R6
+R2
+vfullAdder
+2Z:/Desktop/lab11/fullAdder.v
+Z7 !s110 1765337145
+!i10b 1
+!s100 67<0VE0JGCSJ@ozHC_J?_1
+I<QCXc4UBJ5kHLSG@ZiY`U0
+R1
+Z8 w1763849683
+8Z:/Desktop/lab11/fullAdder.v
+FZ:/Desktop/lab11/fullAdder.v
+!i122 9
+L0 9 8
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337145.000000
+!s107 Z:/Desktop/lab11/fullAdder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/fullAdder.v|
+!i113 0
+R5
+R6
+R2
+nfull@adder
+vgenericAdder
+2Z:/Desktop/lab11/genericAdder.v
+R7
+!i10b 1
+!s100 52YMN;L45e_doeLAgHmAN0
+ISAkdQPia6Gjgn`UM>@V^N1
+R1
+R8
+8Z:/Desktop/lab11/genericAdder.v
+FZ:/Desktop/lab11/genericAdder.v
+!i122 8
+L0 9 21
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337144.000000
+!s107 Z:/Desktop/lab11/genericAdder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/genericAdder.v|
+!i113 0
+R5
+R6
+R2
+ngeneric@adder
+vgenericComparator
+2Z:/Desktop/lab11/genericComparator.v
+!s110 1765337144
+!i10b 1
+!s100 0e[<I>lzS@mcR5b^becTU3
+I9>QM@POkB>QfNN[_KSeP02
+R1
+R8
+8Z:/Desktop/lab11/genericComparator.v
+FZ:/Desktop/lab11/genericComparator.v
+!i122 7
+L0 7 12
+R3
+R4
+r1
+!s85 0
+31
+Z9 !s108 1765337143.000000
+!s107 Z:/Desktop/lab11/genericComparator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/genericComparator.v|
+!i113 0
+R5
+R6
+R2
+ngeneric@comparator
+vgenericCounter
+2Z:/Desktop/lab11/genericCounter.v
+!s110 1765337143
+!i10b 1
+!s100 ^EaoP;R5_Zfd0jAWB2HkB0
+I=?B0UB9G5I=l=_=WI?:SZ2
+R1
+R8
+8Z:/Desktop/lab11/genericCounter.v
+FZ:/Desktop/lab11/genericCounter.v
+!i122 6
+L0 12 20
+R3
+R4
+r1
+!s85 0
+31
+R9
+!s107 Z:/Desktop/lab11/genericCounter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/genericCounter.v|
+!i113 0
+R5
+R6
+R2
+ngeneric@counter
+vgenericMux2x1
+2Z:/Desktop/lab11/genericMux2x1.v
+!s110 1765337142
+!i10b 1
+!s100 N@m?TGRJZ?l>D7R1<5Odg0
+IFl0kE?YK;j>KUJGPQ4]lC1
+R1
+R8
+8Z:/Desktop/lab11/genericMux2x1.v
+FZ:/Desktop/lab11/genericMux2x1.v
+!i122 5
+L0 8 14
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337142.000000
+!s107 Z:/Desktop/lab11/genericMux2x1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/genericMux2x1.v|
+!i113 0
+R5
+R6
+R2
+ngeneric@mux2x1
+vgenericRegister
+2Z:/Desktop/lab11/genericRegister.v
+Z10 !s110 1765337141
+!i10b 1
+!s100 `VS=I3:^VC8H2PM:5UHUW2
+IZd;Vb3Ai:cC?@B[BoDfYb2
+R1
+R8
+8Z:/Desktop/lab11/genericRegister.v
+FZ:/Desktop/lab11/genericRegister.v
+!i122 4
+L0 8 18
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337141.000000
+!s107 Z:/Desktop/lab11/genericRegister.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/genericRegister.v|
+!i113 0
+R5
+R6
+R2
+ngeneric@register
+vhexToSevenSeg
+2Z:/Desktop/lab11/hexToSevenSeg.v
+R10
+!i10b 1
+!s100 U]5i9bf4R[fdNoXTf2ZS90
+IZo67eS5TE_Sn6GNdV2LMj3
+R1
+R8
+8Z:/Desktop/lab11/hexToSevenSeg.v
+FZ:/Desktop/lab11/hexToSevenSeg.v
+!i122 3
+L0 37 30
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337140.000000
+!s107 Z:/Desktop/lab11/hexToSevenSeg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/hexToSevenSeg.v|
+!i113 0
+R5
+R6
+R2
+nhex@to@seven@seg
+vmod10counter
+2Z:/Desktop/lab11/mod10counter.v
+!s110 1765337140
+!i10b 1
+!s100 HFUPmQ43d6L<Q4mZDTSLO1
+IESLVjn3:FGHZhj;=TQ8VJ1
+R1
+w1763852448
+8Z:/Desktop/lab11/mod10counter.v
+FZ:/Desktop/lab11/mod10counter.v
+!i122 2
+L0 8 33
+R3
+R4
+r1
+!s85 0
+31
+Z11 !s108 1765337139.000000
+!s107 Z:/Desktop/lab11/mod10counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/mod10counter.v|
+!i113 0
+R5
+R6
+R2
+vstopwatch
+2Z:/Desktop/lab11/stopwatch.v
+!s110 1765337139
+!i10b 1
+!s100 8:ZHb7:kO2zSlgK8f8_B?3
+I421edSAQYkY15n9@mCc^63
+R1
+w1765336234
+8Z:/Desktop/lab11/stopwatch.v
+FZ:/Desktop/lab11/stopwatch.v
+!i122 1
+L0 29 21
+R3
+R4
+r1
+!s85 0
+31
+R11
+!s107 Z:/Desktop/lab11/stopwatch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/stopwatch.v|
+!i113 0
+R5
+R6
+R2
+vstopWatch_tb
+2Z:/Desktop/lab11/stopWatch_tb.v
+!s110 1765337138
+!i10b 1
+!s100 [iQX8I2Y]R0QmUHfFOnD:3
+IP6gT=LE[Yz>I;mR<K43Ji0
+R1
+w1765334684
+8Z:/Desktop/lab11/stopWatch_tb.v
+FZ:/Desktop/lab11/stopWatch_tb.v
+!i122 0
+L0 20 65
+R3
+R4
+r1
+!s85 0
+31
+!s108 1765337138.000000
+!s107 Z:/Desktop/lab11/stopWatch_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+Z:/Desktop/lab11|Z:/Desktop/lab11/stopWatch_tb.v|
+!i113 0
+R5
+R6
+R2
+nstop@watch_tb

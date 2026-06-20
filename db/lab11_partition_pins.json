@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "tenHex[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tenHex[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tenHex[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tenHex[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tenHex[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tenHex[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tenHex[6]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[0]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[1]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[2]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[3]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[4]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[5]",
+					"strict" : false
+				},
+				{
+					"name" : "unitHex[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tenthHex[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "resetn",
+					"strict" : false
+				},
+				{
+					"name" : "S1",
+					"strict" : false
+				},
+				{
+					"name" : "S2",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

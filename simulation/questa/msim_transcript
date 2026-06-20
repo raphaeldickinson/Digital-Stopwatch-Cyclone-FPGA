@@ -1,0 +1,281 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 win64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do lab11_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/stopWatch_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:38 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/stopWatch_tb.v 
+# -- Compiling module stopWatch_tb
+# 
+# Top level modules:
+# 	stopWatch_tb
+# End time: 20:25:38 on Dec 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/stopwatch.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:39 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/stopwatch.v 
+# -- Compiling module stopwatch
+# 
+# Top level modules:
+# 	stopwatch
+# End time: 20:25:39 on Dec 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/mod10counter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:39 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/mod10counter.v 
+# -- Compiling module mod10counter
+# 
+# Top level modules:
+# 	mod10counter
+# End time: 20:25:40 on Dec 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/hexToSevenSeg.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:40 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/hexToSevenSeg.v 
+# -- Compiling module hexToSevenSeg
+# 
+# Top level modules:
+# 	hexToSevenSeg
+# End time: 20:25:41 on Dec 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/genericRegister.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:41 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/genericRegister.v 
+# -- Compiling module genericRegister
+# 
+# Top level modules:
+# 	genericRegister
+# End time: 20:25:41 on Dec 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/genericMux2x1.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:42 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/genericMux2x1.v 
+# -- Compiling module genericMux2x1
+# 
+# Top level modules:
+# 	genericMux2x1
+# End time: 20:25:42 on Dec 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/genericCounter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:43 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/genericCounter.v 
+# -- Compiling module genericCounter
+# 
+# Top level modules:
+# 	genericCounter
+# End time: 20:25:43 on Dec 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/genericComparator.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:43 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/genericComparator.v 
+# -- Compiling module genericComparator
+# 
+# Top level modules:
+# 	genericComparator
+# End time: 20:25:44 on Dec 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/genericAdder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:44 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/genericAdder.v 
+# -- Compiling module genericAdder
+# 
+# Top level modules:
+# 	genericAdder
+# End time: 20:25:45 on Dec 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/fullAdder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:45 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/fullAdder.v 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 20:25:46 on Dec 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/datapath.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:46 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/datapath.v 
+# -- Compiling module datapath
+# ** Warning: Z:/Desktop/lab11/datapath.v(39): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: Z:/Desktop/lab11/datapath.v(40): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	datapath
+# End time: 20:25:47 on Dec 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/lab11 {Z:/Desktop/lab11/controlUnit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 20:25:47 on Dec 09,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+Z:/Desktop/lab11" Z:/Desktop/lab11/controlUnit.v 
+# -- Compiling module controlUnit
+# 
+# Top level modules:
+# 	controlUnit
+# End time: 20:25:47 on Dec 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -voptargs=+acc work.stopWatch_tb
+# vsim -voptargs="+acc" work.stopWatch_tb 
+# Start time: 20:26:00 on Dec 09,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "controlUnit(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.stopWatch_tb(fast)
+# Loading work.stopwatch(fast)
+# Loading work.datapath(fast)
+# Loading work.genericCounter(fast)
+# Loading work.genericComparator(fast)
+# Loading work.mod10counter(fast)
+# Loading work.genericAdder(fast)
+# Loading work.fullAdder(fast)
+# Loading work.genericMux2x1(fast)
+# Loading work.genericRegister(fast)
+# Loading work.hexToSevenSeg(fast)
+# Loading work.controlUnit(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'tenthSecondCompare'.  Expected 5, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenthSecondCompare File: Z:/Desktop/lab11/datapath.v Line: 43
+# ** Warning: (vsim-3722) Z:/Desktop/lab11/datapath.v(43): [TFMPC] - Missing connection for port 'lt'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenthMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/unitMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+add wave -position insertpoint sim:/stopWatch_tb/uut/*
+restart -f
+delete wave *
+
+radix define States {
+    4'b0000 "RESET"   -color red,
+    4'b0001 "STOP"   -color red,
+    4'b0010 "S2RES"   -color red,
+    4'b0011 "S2R"   -color red,
+    4'b0100 "RUN"   -color yellow,
+    4'b0101 "R2LR"   -color yellow,
+    4'b0110 "R2S"   -color yellow,
+    4'b0111 "INC"   -color yellow,
+    4'b1000 "LAPRUN"   -color orange,
+    4'b1001 "LR2R"   -color orange,
+    4'b1010 "LR2LS"   -color orange,
+    4'b1011 "LAPINC"   -color orange,
+    4'b1100 "LAPSTOP"   -color green,
+    4'b1101 "LS2R"   -color green,
+    4'b1110 "LS2LR"   -color green,
+
+    -default hex
+    -defaultcolor white
+}
+
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.stopWatch_tb(fast)
+# Loading work.stopwatch(fast)
+# Loading work.datapath(fast)
+# Loading work.genericCounter(fast)
+# Loading work.genericComparator(fast)
+# Loading work.mod10counter(fast)
+# Loading work.genericAdder(fast)
+# Loading work.fullAdder(fast)
+# Loading work.genericMux2x1(fast)
+# Loading work.genericRegister(fast)
+# Loading work.hexToSevenSeg(fast)
+# Loading work.controlUnit(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'tenthSecondCompare'.  Expected 5, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenthSecondCompare File: Z:/Desktop/lab11/datapath.v Line: 43
+# ** Warning: (vsim-3722) Z:/Desktop/lab11/datapath.v(43): [TFMPC] - Missing connection for port 'lt'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenthMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/unitMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+delete wave *
+
+add wave -position end  sim:/stopWatch_tb/uut/clk
+add wave -position end  sim:/stopWatch_tb/uut/resetn
+
+add wave -position end  -radix States sim:/stopWatch_tb/uut/cpsw/state
+
+add wave -position end  -radix hex -color yellow sim:/stopWatch_tb/uut/cw
+add wave -position end 		   -color yellow  sim:/stopWatch_tb/uut/dpsw/tenth
+add wave -position end 		   -color yellow  sim:/stopWatch_tb/uut/S1
+add wave -position end 		   -color yellow sim:/stopWatch_tb/uut/S2
+
+add wave -position end  -radix hex -color red sim:/stopWatch_tb/uut/dpsw/clkCount
+
+add wave -position end  -radix hex -color orange sim:/stopWatch_tb/uut/dpsw/tenthDigit
+add wave -position end  -radix hex -color orange sim:/stopWatch_tb/uut/dpsw/tenthDisp
+add wave -position end  -radix hex -color orange sim:/stopWatch_tb/uut/dpsw/unitDigit
+add wave -position end  -radix hex -color green sim:/stopWatch_tb/uut/dpsw/unitDisp
+add wave -position end  -radix hex -color green sim:/stopWatch_tb/uut/dpsw/unitDigit
+add wave -position end  -radix hex -color green sim:/stopWatch_tb/uut/dpsw/tenDisp
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.stopWatch_tb(fast)
+# Loading work.stopwatch(fast)
+# Loading work.datapath(fast)
+# Loading work.genericCounter(fast)
+# Loading work.genericComparator(fast)
+# Loading work.mod10counter(fast)
+# Loading work.genericAdder(fast)
+# Loading work.fullAdder(fast)
+# Loading work.genericMux2x1(fast)
+# Loading work.genericRegister(fast)
+# Loading work.hexToSevenSeg(fast)
+# Loading work.controlUnit(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'tenthSecondCompare'.  Expected 5, found 4.
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenthSecondCompare File: Z:/Desktop/lab11/datapath.v Line: 43
+# ** Warning: (vsim-3722) Z:/Desktop/lab11/datapath.v(43): [TFMPC] - Missing connection for port 'lt'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenthMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/unitMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'carryin'. The port definition is at: Z:/Desktop/lab11/genericAdder.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /stopWatch_tb/uut/dpsw/tenMod10Counter/incrementer File: Z:/Desktop/lab11/mod10counter.v Line: 34
+RUN 1000
+# invalid command name "RUN"
+run 1000
+# Button S2 pressed.
+# Button S1 pressed.
+# Button S2 pressed.
+# Button S2 pressed.
+# Button S1 pressed.
+# End time: 20:54:53 on Dec 09,2025, Elapsed time: 0:28:53
+# Errors: 0, Warnings: 6
